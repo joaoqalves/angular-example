@@ -1,0 +1,19 @@
+{
+  "name": "angular-example",
+  "description": "A starter project for AngularJS",
+  "version": "0.0.1",
+  "homepage": "https:/joaoqalves.net",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "angular": "1.2.x",
+    "angular-route": "1.2.x",
+    "angular-loader": "1.2.x",
+    "angular-mocks": "~1.2.x",
+    "restangular": "1.4.x",
+    "html5-boilerplate": "~4.3.0",
+    "moment": "2.7.0",
+    "font-awesome": "4.2.0",
+    "bootstrap": "~3.2"
+  }
+}

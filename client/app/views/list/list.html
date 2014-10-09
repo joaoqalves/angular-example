@@ -1,0 +1,68 @@
+<nav class="navbar navbar-default" role="navigation">
+<div class="container-fluid">
+  <!-- Brand and toggle get grouped for better mobile display -->
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+    <a class="navbar-brand" href="#">Llista de Tasques</a>
+  </div>
+
+  <!-- Collect the nav links, forms, and other content for toggling -->
+  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+    <form class="navbar-form navbar-left" role="search">
+      <div class="form-group">
+        <input type="text" class="form-control" placeholder="New Task" ng-model="newTask.title">
+      </div>
+      <button type="submit" class="btn btn-success" ng-click="add()">Add</button>
+    </form>
+  </div><!-- /.navbar-collapse -->
+</div><!-- /.container-fluid -->
+</nav>
+  <div class="container">
+    <div class="row">
+		<div class=".col-sm-6 .col-sm-offset-3">
+		<table class="table table-striped" ng-show="tasks.length">
+			<thead>
+				<tr>
+					<th class="text-center">
+						#
+					</th>
+					<th class="text-center">
+						Name
+					</th>
+					<th class="text-center" colspan="2">
+						Reorder
+					</th>
+					<th class="text-center">
+						Delete
+					</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat="task in tasks">
+					<td class="text-center">
+						{{$index + 1}}
+					</td>
+					<td class="text-center">
+						{{task.title}}
+					</td>
+					<td class="text-center arrow arrow-left">
+						<a href="" ng-if="!$last" ng-click="down(task)">&dArr;</a>
+					</td>
+					<td class="text-center arrow arrow-right">
+						<a href="" ng-if="!$first" ng-click="up(task)">&uArr;</a>
+					</td>
+					<td class="text-center">
+						<button type="button" class="btn btn-danger" ng-click="remove(task)">Delete</button>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<div class="alert alert-info text-center" role="alert" ng-show="!tasks.length">You have no tasks! Add one :)</div>
+		</div>
+	</div>
+</div>
